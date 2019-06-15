@@ -30,10 +30,12 @@
 		<h1 class="text-subheading">Tambah User</h1>
 		<form action="<?= base_url('home/tambah_user'); ?>" method="POST">
 			<label for="nama">Nama</label><br>
-			<input type="text" name="nama" class="form-control">
+			<input type="text" name="nama" class="form-control" required="Form isian tidak boleh kosong!">
 			<label for="status">Status</label><br>
 			<select name="status" clas="form-control">
-				<option>Admin</option>
+				<?php if ($_SESSION['logged_in'][4] == 'admin') : ?>
+					<option>Admin</option>
+				<?php endif; ?>
 				<option>Guru</option>
 				<option>Murid</option>
 			</select><br>
