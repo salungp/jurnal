@@ -1,7 +1,7 @@
 <?php
 class App
 {
-	protected $controller = 'home';
+	protected $controller = 'Home';
 
 	protected $method = 'index';
 
@@ -17,7 +17,7 @@ class App
 			unset($url[0]);
 		}
 
-		require_once 'aplication/controllers/'.$this->controller.'.php';
+		include 'aplication/controllers/'.$this->controller.'.php';
 		$this->controller = new $this->controller;
 
 		if (isset($url[1]))
