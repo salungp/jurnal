@@ -36,7 +36,9 @@
 				<?php if ($_SESSION['logged_in'][4] == 'admin') : ?>
 					<option>Admin</option>
 				<?php endif; ?>
-				<option>Guru</option>
+				<?php if ($_SESSION['logged_in'][4] == 'guru' || $_SESSION['logged_in'][4] == 'admin') : ?>
+					<option>Guru</option>
+				<?php endif; ?>
 				<option>Murid</option>
 			</select><br>
 			<button class="btn" type="submit">Simpan</button>
